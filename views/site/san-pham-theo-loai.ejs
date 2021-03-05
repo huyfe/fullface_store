@@ -1,0 +1,522 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <link href="img/favicon.ico" rel="icon">
+
+    <title>Fullface Store</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta content="eCommerce HTML Template Free Download" name="keywords">
+    <meta content="eCommerce HTML Template Free Download" name="description">
+
+    <!-- Favicon -->
+    <link rel="shortcut icon" href="img/favicon.ico">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400|Source+Code+Pro:700,900&display=swap" rel="stylesheet">
+
+    <!-- CSS Libraries -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
+    <link href="../lib/slick/slick.css" rel="stylesheet">
+    <link href="../lib/slick/slick-theme.css" rel="stylesheet">
+
+    <!-- Template Stylesheet -->
+    <link href="../css/style.css" rel="stylesheet">
+</head>
+
+<body>
+    <!-- Top bar Start -->
+    <div class="top-bar">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-sm-6">
+                    <i class="fa fa-envelope"></i> huyyntran@.com
+                </div>
+                <div class="col-sm-6">
+                    <i class="fa fa-phone-alt"></i> +0333 964 846
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Top bar End -->
+
+    <!-- Nav Bar Start -->
+    <div class="nav">
+        <div class="container-fluid">
+            <nav class="navbar navbar-expand-md bg-dark navbar-dark">
+                <a href="#" class="navbar-brand">MENU</a>
+                <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+
+                <div class="collapse navbar-collapse justify-content-between" id="navbarCollapse">
+                    <div class="navbar-nav mr-auto">
+                        <a href="/" class="nav-item nav-link active">Trang Chủ</a>
+                        <a href="/san-pham" class="nav-item nav-link">Sản Phẩm</a>
+                        <!-- <a href="product-detail.html" class="nav-item nav-link">Product Detail</a> -->
+                        <a href="/gio-hang" class="nav-item nav-link">Giỏ Hàng</a>
+                        <a href="/thanh-toan" class="nav-item nav-link">Thanh Toán</a>
+                        <a href="/users/tai-khoan" class="nav-item nav-link">Tài khoản của bạn</a>
+                        <div class="nav-item dropdown">
+                            <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Trang khác</a>
+                            <div class="dropdown-menu">
+                                <a href="/wishlist" class="dropdown-item">Sản phẩm đã thích</a>
+                                <a href="/lien-he" class="dropdown-item">Liên hệ</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="navbar-nav ml-auto">
+                        <div class="nav-item dropdown">
+                            <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Tài khoản</a>
+                            <div class="dropdown-menu">
+                                <a href="/users/dang-nhap" class="dropdown-item">Đăng nhập</a>
+                                <a href="/users/dang-ky" class="dropdown-item">Đăng ký</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </nav>
+        </div>
+    </div>
+    <!-- Nav Bar End -->
+
+    <!-- Bottom Bar Start -->
+    <div class="bottom-bar">
+        <div class="container-fluid">
+            <div class="row align-items-center">
+                <div class="col-md-3">
+                    <div class="logo">
+                        <a href="/">
+                            <img src="../img/logo.png" alt="Logo">
+                        </a>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="search">
+                        <input type="text" placeholder="Search">
+                        <button><i class="fa fa-search"></i></button>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="user">
+                        <a href="wishlist.html" class="btn wishlist">
+                            <i class="fa fa-heart"></i>
+                            <span>(0)</span>
+                        </a>
+                        <a href="cart.html" class="btn cart">
+                            <i class="fa fa-shopping-cart"></i>
+                            <span>(0)</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Bottom Bar End -->
+
+    <!-- Breadcrumb Start -->
+    <div class="breadcrumb-wrap">
+        <div class="container-fluid">
+            <ul class="breadcrumb">
+                <li class="breadcrumb-item"><a href="/">Home</a></li>
+                <li class="breadcrumb-item"><a href="/san-pham">Sản phẩm</a></li>
+                <li class="breadcrumb-item active">
+                    <%=breadcrumb%>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <!-- Breadcrumb End -->
+
+    <!-- Product List Start -->
+    <div class="product-view">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-lg-8">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="product-view-top">
+                                <div class="row">
+                                    <div class="col-md-4">
+                                        <div class="product-search">
+                                            <input id="myInput" type="email" placeholder="Tìm kiếm tên sản phẩm">
+                                            <button><i class="fa fa-search"></i></button>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <div class="product-short">
+                                            <div class="dropdown">
+                                                <div class="dropdown-toggle" data-toggle="dropdown">Sắp xếp theo</div>
+                                                <div class="dropdown-menu dropdown-menu-right">
+                                                    <a href="#" class="dropdown-item">Mới nhất</a>
+                                                    <a href="#" class="dropdown-item">Phổ biến</a>
+                                                    <a href="#" class="dropdown-item">Bán chạy nhất</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <div class="product-price-range">
+                                            <div class="dropdown">
+                                                <div class="dropdown-toggle" data-toggle="dropdown">Sắp xếp theo giá</div>
+                                                <div class="dropdown-menu dropdown-menu-right">
+                                                    <a href="#" class="dropdown-item">0 ₫ - 500.000 ₫</a>
+                                                    <a href="#" class="dropdown-item">500.000 ₫ - 1.000.000 ₫</a>
+                                                    <a href="#" class="dropdown-item">1.000.000 ₫ - 2.000.000 ₫</a>
+                                                    <a href="#" class="dropdown-item">2.000.000 ₫ - 5.000.000 ₫</a>
+                                                    <a href="#" class="dropdown-item">Trên 5.000.000 ₫</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- danh sách sản phẩm theo loại đc nhúng tại đây -->
+                        <div class="col-md-12">
+                            <div id="myTable" class="row">
+
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <!-- Pagination Start -->
+                    <div class="col-md-12">
+                        <nav aria-label="Page navigation example">
+                            <ul class="pagination justify-content-center">
+                                <li class="page-item disabled">
+                                    <a class="page-link" href="#" tabindex="-1">Previous</a>
+                                </li>
+                                <li class="page-item active"><a class="page-link" href="#">1</a></li>
+                                <li class="page-item"><a class="page-link" href="#">2</a></li>
+                                <li class="page-item"><a class="page-link" href="#">3</a></li>
+                                <li class="page-item">
+                                    <a class="page-link" href="#">Next</a>
+                                </li>
+                            </ul>
+                        </nav>
+                    </div>
+                    <!-- Pagination Start -->
+                </div>
+
+                <!-- Side Bar Start -->
+                <div class="col-lg-4 sidebar">
+                    <div class="sidebar-widget category">
+                        <h2 class="title">Danh mục</h2>
+                        <nav class="navbar bg-light">
+                            <ul class="navbar-nav">
+                                <% for (cat of listCat) { %>
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="/danh-muc/<%=cat.nameCat%>"><i class="fa fa-motorcycle"></i>Nón Fullface <%= cat.nameCat %></a>
+                                    </li>
+                                    <% } %>
+                            </ul>
+                        </nav>
+                    </div>
+
+                    <div class="sidebar-widget widget-slider">
+                        <h3 style="text-align: center; color: #FF6F61;">Nón Nổi Bật</h3>
+                        <div class="sidebar-slider normal-slider">
+                            <% for (product of listProPopular) { %>
+                                <div class="product-item">
+                                    <div class="product-title">
+                                        <a href="#">
+                                            <%=product.nameProduct%>
+                                        </a>
+                                        <div class="ratting">
+                                            <i class="fa fa-star"></i>
+                                            <i class="fa fa-star"></i>
+                                            <i class="fa fa-star"></i>
+                                            <i class="fa fa-star"></i>
+                                            <i class="fa fa-star"></i>
+                                        </div>
+                                    </div>
+                                    <div class="product-image">
+                                        <a href="product-detail.html">
+                                                <img src="../<%=product.imgProduct%>" alt="Product Image">
+                                            </a>
+                                        <div class="product-action">
+                                            <a href="#"><i class="fa fa-cart-plus"></i></a>
+                                            <a href="#"><i class="fa fa-heart"></i></a>
+                                            <a class="slug" href="/san-pham/<%=product.nameProduct%>"><i class="fa fa-search"></i></a>
+                                        </div>
+                                    </div>
+                                    <div class="product-price">
+                                        <h3>
+                                            <%=product.priceProduct.toLocaleString('vi-VN')%> <span>₫</span></h3>
+                                        <a class="btn" href=""><i class="fa fa-shopping-cart"></i>Mua Ngay</a>
+                                    </div>
+                                </div>
+                                <% } %>
+                        </div>
+                    </div>
+
+                    <div class="sidebar-widget brands">
+                        <h2 class="title">Our Brands</h2>
+                        <ul>
+                            <li><a href="#">Nulla </a><span>(45)</span></li>
+                            <li><a href="#">Curabitur </a><span>(34)</span></li>
+                            <li><a href="#">Nunc </a><span>(67)</span></li>
+                            <li><a href="#">Ullamcorper</a><span>(74)</span></li>
+                            <li><a href="#">Fusce </a><span>(89)</span></li>
+                            <li><a href="#">Sagittis</a><span>(28)</span></li>
+                        </ul>
+                    </div>
+
+                    <div class="sidebar-widget tag">
+                        <h2 class="title">Tags Cloud</h2>
+                        <a href="#">Lorem ipsum</a>
+                        <a href="#">Vivamus</a>
+                        <a href="#">Phasellus</a>
+                        <a href="#">pulvinar</a>
+                        <a href="#">Curabitur</a>
+                        <a href="#">Fusce</a>
+                        <a href="#">Sem quis</a>
+                        <a href="#">Mollis metus</a>
+                        <a href="#">Sit amet</a>
+                        <a href="#">Vel posuere</a>
+                        <a href="#">orci luctus</a>
+                        <a href="#">Nam lorem</a>
+                    </div>
+                </div>
+                <!-- Side Bar End -->
+            </div>
+        </div>
+    </div>
+    <!-- Product List End -->
+
+    <!-- Brand Start -->
+    <div class="brand">
+        <div class="container-fluid">
+            <div class="brand-slider">
+                <div class="brand-item">
+                    <a href="/danh-muc/agv"><img src="../img/brand-1.png" alt=""></a>
+                </div>
+                <div class="brand-item">
+                    <a href="/danh-muc/shoei"><img src="../img/brand-2.png" alt=""></a>
+                </div>
+                <div class="brand-item">
+                    <a href="/danh-muc/arai"><img src="../img/brand-3.png" alt=""></a>
+                </div>
+                <div class="brand-item">
+                    <a href="/danh-muc/torc"><img src="../img/brand-4.png" alt=""></a>
+                </div>
+                <div class="brand-item">
+                    <a href="/danh-muc/yohe"><img src="../img/brand-5.png" alt=""></a>
+                </div>
+                <div class="brand-item">
+                    <a href="/danh-muc/kyt"><img src="../img/brand-6.png" alt=""></a>
+                </div>
+                <div class="brand-item">
+                    <a href="/danh-muc/royal"><img src="../img/brand-7.png" alt=""></a>
+                </div>
+                <div class="brand-item">
+                    <a href="/danh-muc/ls2"><img src="../img/brand-8.png" alt=""></a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Brand End -->
+
+    <!-- Footer Start -->
+    <div class="footer">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-lg-3 col-md-6">
+                    <div class="footer-widget">
+                        <h2>Liên Hệ</h2>
+                        <div class="contact-info">
+                            <p><i class="fa fa-map-marker"></i>Trảng Bàng, Tây Ninh, Việt Nam</p>
+                            <p><i class="fa fa-envelope"></i>huyyntran@gmail.com</p>
+                            <p><i class="fa fa-phone"></i>+0333 964 846</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-3 col-md-6">
+                    <div class="footer-widget">
+                        <h2>Theo Dõi Tôi</h2>
+                        <div class="contact-info">
+                            <div class="social">
+                                <a href=""><i class="fab fa-twitter"></i></a>
+                                <a href="https://www.facebook.com/ybx1802"><i class="fab fa-facebook-f"></i></a>
+                                <a href="https://www.linkedin.com/in/huy-tran-57777b202/"><i class="fab fa-linkedin-in"></i></a>
+                                <a href="https://www.instagram.com/huy_jr18"><i class="fab fa-instagram"></i></a>
+                                <a href="https://www.youtube.com/channel/UCctcteJFmH4Wxc8npHW9Cog"><i class="fab fa-youtube"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-3 col-md-6">
+                    <div class="footer-widget">
+                        <h2>Thông Tin Cửa Hàng</h2>
+                        <ul>
+                            <li><a href="#">Giới thiệu</a></li>
+                            <li><a href="#">Chính sách bảo mật</a></li>
+                            <li><a href="#">Hình thức vận chuyển</a></li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="col-lg-3 col-md-6">
+                    <div class="footer-widget">
+                        <h2>Thông Tin Mua Hàng</h2>
+                        <ul>
+                            <li><a href="#">Chính sách thanh toán</a></li>
+                            <li><a href="#">Chính sách vận chuyển</a></li>
+                            <li><a href="#">Chính sách hoàn trả</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row payment align-items-center">
+                <div class="col-md-6">
+                    <div class="payment-method">
+                        <h2>Nhận thanh toán bằng:</h2>
+                        <img src="../img/payment-method.png" alt="Payment Method" />
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="payment-security">
+                        <h2>Chứng chỉ bảo mật:</h2>
+                        <img src="../img/godaddy.svg" alt="Payment Security" />
+                        <img src="../img/norton.svg" alt="Payment Security" />
+                        <img src="../img/ssl.svg" alt="Payment Security" />
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Footer End -->
+
+    <!-- Footer Bottom Start -->
+    <div class="footer-bottom">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6 copyright">
+                    <p>Copyright &copy; <a href="https:www.facebook.com/ybx1802">Fullface Store</a>. All Rights Reserved</p>
+                </div>
+
+                <div class="col-md-6 template-by">
+                    <p>Developed By <a href="https://htmlcodex.com">Huy JR</a></p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Footer Bottom End -->
+
+    <!-- Back to Top -->
+    <a href="#" class="back-to-top"><i class="fa fa-chevron-up"></i></a>
+
+    <!-- JavaScript Libraries -->
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.bundle.min.js"></script>
+    <script src="../lib/easing/easing.min.js"></script>
+    <script src="../lib/slick/slick.min.js"></script>
+
+    <!-- Template Javascript -->
+    <script src="../js/main.js"></script>
+</body>
+
+</html>
+
+<script>
+    const xuLyDuLieu = (data, id) => {
+        const sp_theo_loai = document.getElementById("myTable");
+        let str = ``;
+        for (i in data) {
+            let product = data[i];
+            console.log(product);
+            let newName = replaceNameProduct(product.nameProduct).toLowerCase();
+
+            str +=
+                `<div class="col-md-4">
+                <div class="product-item">
+                    <div class="product-title">
+                        <a class="slug" href="/san-pham/${newName}">${product.nameProduct}</a>
+                        <div class="ratting">
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star"></i>
+                        </div>
+                    </div>
+                    <div class="product-image">
+                        <a href="/san-pham/${replaceNameProduct(product.nameProduct)}">
+                            <img src="../${product.imgProduct}" alt="Product Image" width="100%">
+                        </a>
+                        <div class="product-action">
+                            <a href="#"><i class="fa fa-cart-plus"></i></a>
+                            <a href="#"><i class="fa fa-heart"></i></a>
+                            <a href="/san-pham/${product.nameProduct}"><i class="fa fa-search"></i></a>
+                        </div>
+                    </div>
+                    <div class="product-price">
+                        <h3>${product.priceProduct.toLocaleString('vi-VN')}<span> ₫</span></h3>
+                        <a class="btn" href=""><i class="fa fa-shopping-cart"></i>Mua Ngay</a>
+                    </div>
+                </div>
+            </div>`;
+        }
+        sp_theo_loai.innerHTML += str;
+    }
+
+    var paramsString = window.location.href;
+    var index = paramsString.lastIndexOf('c/') + 2;
+    console.log(index)
+    var ten_danh_muc = paramsString.slice(index);
+    console.log(ten_danh_muc);
+
+    window.fetch(`http://localhost:3000/danh-muc/api/${ten_danh_muc}`)
+        .then(res => {
+            return res.json();
+        })
+        .then(data => {
+            console.log(data);
+            xuLyDuLieu(data);
+        })
+        .catch(err => {
+            console.log(err);
+        })
+
+
+    function xoa_dau(str) {
+        str = str.replace(/à|á|ạ|ả|ã|â|ầ|ấ|ậ|ẩ|ẫ|ă|ằ|ắ|ặ|ẳ|ẵ/g, "a");
+        str = str.replace(/è|é|ẹ|ẻ|ẽ|ê|ề|ế|ệ|ể|ễ/g, "e");
+        str = str.replace(/ì|í|ị|ỉ|ĩ/g, "i");
+        str = str.replace(/ò|ó|ọ|ỏ|õ|ô|ồ|ố|ộ|ổ|ỗ|ơ|ờ|ớ|ợ|ở|ỡ/g, "o");
+        str = str.replace(/ù|ú|ụ|ủ|ũ|ư|ừ|ứ|ự|ử|ữ/g, "u");
+        str = str.replace(/ỳ|ý|ỵ|ỷ|ỹ/g, "y");
+        str = str.replace(/đ/g, "d");
+        str = str.replace(/À|Á|Ạ|Ả|Ã|Â|Ầ|Ấ|Ậ|Ẩ|Ẫ|Ă|Ằ|Ắ|Ặ|Ẳ|Ẵ/g, "a");
+        str = str.replace(/È|É|Ẹ|Ẻ|Ẽ|Ê|Ề|Ế|Ệ|Ể|Ễ/g, "e");
+        str = str.replace(/Ì|Í|Ị|Ỉ|Ĩ/g, "i");
+        str = str.replace(/Ò|Ó|Ọ|Ỏ|Õ|Ô|Ồ|Ố|Ộ|Ổ|Ỗ|Ơ|Ờ|Ớ|Ợ|Ở|Ỡ/g, "o");
+        str = str.replace(/Ù|Ú|Ụ|Ủ|Ũ|Ư|Ừ|Ứ|Ự|Ử|Ữ/g, "u");
+        str = str.replace(/Ỳ|Ý|Ỵ|Ỷ|Ỹ/g, "y");
+        str = str.replace(/Đ/g, "d");
+        str = str.split(' ').join('-');
+        return str;
+    }
+
+    function replaceNameProduct(nameProduct) {
+        var newNameProduct = xoa_dau(nameProduct);
+        return newNameProduct;
+    }
+
+    // Search Product
+    $(document).ready(function() {
+        $("#myInput").on("keyup", function() {
+            var value = $(this).val().toLowerCase();
+            $("#myTable .col-md-4").filter(function() {
+                $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+            });
+        });
+    });
+</script>
