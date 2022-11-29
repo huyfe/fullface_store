@@ -45,5 +45,5 @@ Nếu như terminal in ra đoạn text này tức là đã start thành công
 
 ### Bước 5. Mở trình duyệt lên truy cập domain: localhost:3000 và thưởng thức thành quả thôi nào!.
 
-## Xin cảm ơn và chúc các bạn thành công.
+## Xin cảm ơn và chúc các bạn thành công :clap:
 *Dev Author: Huy FE*
